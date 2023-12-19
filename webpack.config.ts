@@ -16,7 +16,7 @@ export default (env: EnvVariables) => {
     const config: webpack.Configuration = {
         mode: env.mode ?? 'development',
         entry: {
-            index: path.resolve(__dirname, 'src', 'index.ts')
+            index: path.resolve(__dirname, 'src', 'index.tsx')
         },
         output: {
             path: path.resolve(__dirname, 'build'),
