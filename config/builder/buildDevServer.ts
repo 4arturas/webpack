@@ -4,6 +4,7 @@ export function buildDevServer(options:BuildOptions): DevServerConfiguration
 {
     return {
         port: options.port ?? 3000,
-        open: true
+        open: true,
+        historyApiFallback: true // it is needed for react-router-dom history api, it works only in dev mode
     }
 }
