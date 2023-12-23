@@ -16,11 +16,13 @@ export const App = () =>
 
     if ( __PLATFORM__ === 'mobile' )
         return <div>MOBILE</div>*/
-    function TODO(x:number) {
-        console.log(x)
-    }
 
-    TODO(1);
+    function TODO() {
+        TODO2();
+    }
+    function TODO2() {
+        throw new Error();
+    }
 
     return (
         <div data-testid={'App.DataTestId'}>
