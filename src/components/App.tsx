@@ -10,8 +10,17 @@ export const App = () =>
 {
     const [count, setCount] = React.useState<number>(0);
     const increment = () => setCount( prev => prev + 1 );
+
+/*    if ( __PLATFORM__ === 'desktop' )
+        return <div>DESKTOP</div>
+
+    if ( __PLATFORM__ === 'mobile' )
+        return <div>MOBILE</div>*/
+
     return (
         <div>
+            <h3>ENVIRONMENT={__ENV__}</h3>
+            <h3>PLATFORM={__PLATFORM__}</h3>
             <div>
                 <img src={avatarPng} width={50} alt='avatar png'/>
                 <img src={avatarJpg} width={50} alt='avatar jpg'/>

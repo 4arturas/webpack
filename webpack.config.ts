@@ -1,16 +1,18 @@
 import path from 'path';
 import webpack from 'webpack';
 import {buildWepack} from "./config/builder/buildWepack";
-import {BuildMode, BuildPaths} from "./config/builder/types/types";
+import {BuildMode, BuildPaths, BuildPlatform} from "./config/builder/types/types";
 
 
 interface EnvVariables {
-    mode: BuildMode,
-    port: number
-    analyzer?: boolean
+    mode: BuildMode;
+    port: number;
+    analyzer?: boolean;
+    platform: BuildPlatform;
 }
 export default (env: EnvVariables) => {
     console.log(`Mode: ${env.mode}`)
+    console.log(`Platform: ${env.platform}`)
 
     const isDev = env.mode === 'development';
     const isProd = env.mode === 'production';
@@ -24,7 +26,8 @@ export default (env: EnvVariables) => {
         port: env.port ?? 3000,
         mode: env.mode ?? 'development',
         paths,
-        analyzer: env.analyzer
+        analyzer: env.analyzer,
+        platform: env.platform ?? 'desktop'
     })
     return config;
 };
