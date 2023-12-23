@@ -4,6 +4,8 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/types";
 import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import ReactRefreshTypescript from "react-refresh-typescript";
 
 export function buildPlugins({mode, paths, analyzer, platform}:BuildOptions) : Configuration['plugins']
 {
@@ -23,6 +25,7 @@ export function buildPlugins({mode, paths, analyzer, platform}:BuildOptions) : C
     {
         plugins.push( new webpack.ProgressPlugin() );
         plugins.push( new ForkTsCheckerWebpackPlugin() );
+        plugins.push( new ReactRefreshWebpackPlugin() );
     }
     if ( isProd )
     {

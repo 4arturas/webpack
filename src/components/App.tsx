@@ -30,7 +30,7 @@ export const App = () =>
                 <img src={avatarPng} width={50} alt='avatar png'/>
                 <img src={avatarJpg} width={50} alt='avatar jpg'/>
                 <Calendar width={50} height={50} style={{color:'green'}} className={classes.icon}/>
-                <AppImage width={50} height={50} style={{color:'red'}} className={classes.icon} />
+                <AppImage width={50} height={50} style={{color:'green'}} className={classes.icon} />
             </div>
             <Link to={'/'}>home</Link>
             <br/>
