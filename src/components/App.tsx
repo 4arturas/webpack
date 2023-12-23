@@ -23,7 +23,7 @@ export const App = () =>
     TODO(1);
 
     return (
-        <div>
+        <div data-testid={'App.DataTestId'}>
             <h3>ENVIRONMENT={__ENV__}</h3>
             <h3>PLATFORM={__PLATFORM__}</h3>
             <div>
