@@ -1,6 +1,10 @@
 import React from "react";
 import classes from './App.module.scss'
 import {Link, Outlet} from "react-router-dom";
+import avatarPng from "@/assets/avatar.png"
+import avatarJpg from "@/assets/avatar.jpg"
+import Calendar from "@/assets/calendar.svg"
+import AppImage from "@/assets/app-image.svg"
 
 export const App = () =>
 {
@@ -8,6 +12,12 @@ export const App = () =>
     const increment = () => setCount( prev => prev + 1 );
     return (
         <div>
+            <div>
+                <img src={avatarPng} width={50} alt='avatar png'/>
+                <img src={avatarJpg} width={50} alt='avatar jpg'/>
+                <Calendar width={50} height={50} style={{color:'green'}} className={classes.icon}/>
+                <AppImage width={50} height={50} style={{color:'red'}} className={classes.icon} />
+            </div>
             <Link to={'/'}>home</Link>
             <br/>
             <Link to={'/about'}>about</Link>
