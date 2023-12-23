@@ -53,7 +53,7 @@ export function buildLoaders(options:BuildOptions) : ModuleOptions['rules']
             // Compiles Sass to CSS
             "sass-loader",
         ],
-    }
+    };
 
     const tsLoader = {
         test: /\.tsx?$/,
@@ -70,12 +70,33 @@ export function buildLoaders(options:BuildOptions) : ModuleOptions['rules']
                 }
             }
         ]
-    }
+    };
+
+    const babelLoader = {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            // This block can be moved to babel.config.json
+            options: {
+                presets: [
+                    '@babel/preset-env',
+                    '@babel/preset-typescript',
+                    [
+                        '@babel/preset-react', {
+                            runtime: isDev ? 'automatic' : 'classic'
+                        }
+                    ]
+                ]
+            }
+        }
+    };
 
     return [
         assetLoader,
         scssLoader,
-        tsLoader,
+        // tsLoader,
+        babelLoader,
         svgrLoader
     ]
 }
